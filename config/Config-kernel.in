@@ -53,11 +53,11 @@ config KERNEL_ARM_PMU
 config KERNEL_RISCV_PMU
 	bool
 	select KERNEL_RISCV_PMU_SBI
-	depends on riscv64
+	depends on (riscv64 || riscv32)
 
 config KERNEL_RISCV_PMU_SBI
 	bool
-	depends on riscv64
+	depends on (riscv64 || riscv32)
 
 config KERNEL_X86_VSYSCALL_EMULATION
 	bool "Enable vsyscall emulation"
@@ -79,7 +79,7 @@ config KERNEL_X86_VSYSCALL_EMULATION
 config KERNEL_PERF_EVENTS
 	bool "Compile the kernel with performance events and counters"
 	select KERNEL_ARM_PMU if (arm || aarch64)
-	select KERNEL_RISCV_PMU if riscv64
+	select KERNEL_RISCV_PMU if (riscv64 || riscv32)
 
 config KERNEL_PROFILING
 	bool "Compile the kernel with profiling enabled"

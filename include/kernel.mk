@@ -90,7 +90,7 @@ else ifneq (,$(findstring $(ARCH) , mipsel mips64 mips64el ))
   LINUX_KARCH := mips
 else ifneq (,$(findstring $(ARCH) , powerpc64 ))
   LINUX_KARCH := powerpc
-else ifneq (,$(findstring $(ARCH) , riscv64 ))
+else ifneq (,$(findstring $(ARCH) , riscv64 riscv32 ))
   LINUX_KARCH := riscv
 else ifneq (,$(findstring $(ARCH) , sh2 sh3 sh4 ))
   LINUX_KARCH := sh
